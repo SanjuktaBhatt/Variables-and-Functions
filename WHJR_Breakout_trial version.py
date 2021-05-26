@@ -1,18 +1,20 @@
 import pygame
-pygame.init() 
+pygame.init()
+ 
 WHITE = (255,255,255)
 DARKBLUE = (36,90,190)
 LIGHTBLUE = (0,176,240)
 RED = (255,0,0)
-bricks=[]
-for j in ([60,100,140]):
-  bricks.append([pygame.Rect(10 + i* 100,j,80,30) for i in range(7)])
 
 
-def draw_brick():
-    for i in bricks:
-        for j in i:
-            pygame.draw.rect(screen,RED,j)
+
+bricks1=[pygame.Rect(10 + i* 100,60,80,30) for i in range(6)]
+bricks2=[pygame.Rect(10 + i* 100,100,80,30) for i in range(6)]
+bricks3=[pygame.Rect(10 + i* 100,140,80,30) for i in range(6)]
+
+def draw_brick(brick_list):
+    for i in brick_list:
+        pygame.draw.rect(screen,RED,i)
 
 score = 0
 lives = 3
@@ -41,7 +43,9 @@ while carryOn:
             if paddle.x>0:
                 paddle.x-=5
     # brick wall   
-    draw_brick()
+    draw_brick(bricks1)
+    draw_brick(bricks2)
+    draw_brick(bricks3)
     
     
     #ball movement    
@@ -63,13 +67,24 @@ while carryOn:
         break
     pygame.draw.rect(screen,WHITE ,ball)
     #score
-    for i in bricks:
-        for j in i:
-            if j.collidepoint(ball.x,ball.y):
-                bricks.remove(j)
-                velocity[0] = -velocity[0]
-                velocity[1]=-velocity[1]
-                score+=1
+    for i in bricks1:
+        if i.collidepoint(ball.x,ball.y):
+            bricks1.remove(i)
+            velocity[0] = -velocity[0]
+            velocity[1]=-velocity[1]
+            score+=3
+    for i in bricks2:
+        if i.collidepoint(ball.x,ball.y):
+            bricks2.remove(i)
+            velocity[0] = -velocity[0]
+            velocity[1]=-velocity[1]
+            score+=2
+    for i in bricks3:
+        if i.collidepoint(ball.x,ball.y):
+            velocity[0] = -velocity[0]
+            velocity[1]=-velocity[1]
+            bricks3.remove(i)
+            score+=1
                 
     if score==18:
         font = pygame.font.Font(None, 74)
