@@ -3,8 +3,8 @@ import pygame
 pygame.init()
 
 screen = pygame.display.set_mode((400,600))
+#Create the apddle here
 
-player=pygame.Rect(200,500,30,30)
 
 while True:    
     for event in pygame.event.get():
@@ -12,6 +12,6 @@ while True:
             pygame.quit()
             sys.exit()
             
-    pygame.draw.rect(screen,(23,100,100),player)
+    #Draw the paddle here
     
     pygame.display.update()
