@@ -8,8 +8,9 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Breakout Game")
 paddle=pygame.Rect(300,500,60,10)
 ball=pygame.Rect(200,250,10,10)
-#Create ballx and bally here
-
+#Change ballx and ball y values as required
+ballx=1
+bally=1
 
 carryOn = True
 while carryOn:
@@ -19,9 +20,8 @@ while carryOn:
     screen.fill(DARKBLUE)
     
     pygame.draw.rect(screen,LIGHTBLUE,paddle)
-    # Update ball movement here(before draing the ball on the screen
-    
-    
+    ball.x=ball.x+ballx
+    ball.y=ball.y+bally
     pygame.draw.rect(screen,WHITE ,ball)
     pygame.time.wait(20)
     pygame.display.flip()
