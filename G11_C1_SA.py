@@ -4,7 +4,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((400,600))
 
-paddle=pygame.Rect(200,500,30,30)
+paddle=pygame.Rect(200,500,60,30)
 #create a ball here
 
 
