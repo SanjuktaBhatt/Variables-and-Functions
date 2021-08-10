@@ -19,7 +19,7 @@ while carryOn:
     screen.fill(DARKBLUE)
     
     pygame.draw.rect(screen,LIGHTBLUE,paddle)
-    # Update ball movement here(before draing the ball on the screen
+    # Update ball movement here(before drawing the ball on the screen)
     
     
     pygame.draw.rect(screen,WHITE ,ball)
