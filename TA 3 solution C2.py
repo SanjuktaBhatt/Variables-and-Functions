@@ -20,11 +20,12 @@ while carryOn:
     pygame.draw.rect(screen,LIGHTBLUE,paddle)
     ball.x=ball.x+ballx
     ball.y=ball.y+bally
+    #Boundaries for x-axis
     if ball.x>=590:
       ballx=-ballx
     if ball.x<=10:
       ball.x=-ballx
-      
+    #Boundaries for y-axis 
     if ball.y>=590:
       bally=-bally
     if ball.y<=10:
