@@ -8,6 +8,7 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Breakout Game")
 paddle=pygame.Rect(300,500,60,10)
 ball=pygame.Rect(200,250,10,10)
+#creating variables
 ballx=1
 bally=1
 carryOn = True
@@ -18,6 +19,7 @@ while carryOn:
     screen.fill(DARKBLUE)
     
     pygame.draw.rect(screen,LIGHTBLUE,paddle)
+    #updating variables
     ball.x=ball.x+ballx
     ball.y=ball.y+bally
     pygame.draw.rect(screen,WHITE ,ball)
