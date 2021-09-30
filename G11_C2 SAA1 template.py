@@ -32,6 +32,7 @@ while carryOn:
       bally=-bally
     if ball.y<=10:
       ball.y=-bally
+    #Restrictions
       
     pygame.draw.rect(screen,WHITE ,ball)
     pygame.time.wait(20)
