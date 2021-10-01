@@ -23,12 +23,12 @@ while carryOn:
     if ball.x>=590:
       ballx=-ballx
     if ball.x<=10:
-      ball.x=-ballx
+      ballx=-ballx
       
     if ball.y>=590:
       bally=-bally
     if ball.y<=10:
-      ball.y=-bally
+      bally=-bally
       
     pygame.draw.rect(screen,WHITE ,ball)
     pygame.time.wait(20)
