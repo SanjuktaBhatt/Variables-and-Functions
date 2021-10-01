@@ -24,7 +24,7 @@ while carryOn:
     if ball.x>=590:
       ballx=-ballx
     if ball.x<=10:
-      ball.x=-ballx
+      ballx=-ballx
       
     # Create restriction conditions for the y- boundaries here.
     
